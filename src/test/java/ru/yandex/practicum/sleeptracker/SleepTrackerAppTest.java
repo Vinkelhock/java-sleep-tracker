@@ -24,7 +24,7 @@ public class SleepTrackerAppTest {
     }
 
     @Test
-    public void MinSessionDurationTest() {
+    public void minSessionDurationTest() {
         MinSessionDuration minSessionDuration = new MinSessionDuration();
         SleepAnalysisResult result = minSessionDuration.analyze(sessions);
 
@@ -32,7 +32,7 @@ public class SleepTrackerAppTest {
     }
 
     @Test
-    public void MaxSessionDurationTest() {
+    public void maxSessionDurationTest() {
         MaxSessionDuration maxSessionDuration = new MaxSessionDuration();
         SleepAnalysisResult result = maxSessionDuration.analyze(sessions);
 
@@ -40,7 +40,7 @@ public class SleepTrackerAppTest {
     }
 
     @Test
-    public void AvgSessionDurationTest() {
+    public void avgSessionDurationTest() {
         AvgSessionDuration avgSessionDuration = new AvgSessionDuration();
         SleepAnalysisResult result = avgSessionDuration.analyze(sessions);
 
@@ -48,7 +48,7 @@ public class SleepTrackerAppTest {
     }
 
     @Test
-    public void CountBadSessionTest() {
+    public void countBadSessionTest() {
         CountBadSession countBadSession = new CountBadSession();
         SleepAnalysisResult result = countBadSession.analyze(sessions);
 
@@ -56,7 +56,7 @@ public class SleepTrackerAppTest {
     }
 
     @Test
-    public void CountSleeplessNightTest() {
+    public void countSleeplessNightTest() {
         CountSleeplessNight countSleeplessNight = new CountSleeplessNight();
         SleepAnalysisResult result = countSleeplessNight.analyze(sessions);
 
@@ -64,7 +64,7 @@ public class SleepTrackerAppTest {
     }
 
     @Test
-    public void GetUserTypeTest() {
+    public void getUserTypeTest() {
         GetUserType getUserType = new GetUserType();
         SleepAnalysisResult result = getUserType.analyze(sessions);
 
