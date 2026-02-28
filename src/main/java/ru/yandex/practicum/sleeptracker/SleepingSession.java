@@ -36,6 +36,9 @@ public class SleepingSession {
     }
 
     public String toString() {
-        return "Начало сна: " + startDate.format(DATE_TIME_FORMATTER) + ". Конец сна:  " + endDate.format(DATE_TIME_FORMATTER) + ". Состояние сна: " + sleepType.toString();
+        String dreamStart = startDate.format(DATE_TIME_FORMATTER);
+        String dreamEnd = endDate.format(DATE_TIME_FORMATTER);
+        String dreamType = sleepType.toString();
+        return String.format("Начало сна: %s. Конец сна: %s. Состояние сна: %s", dreamStart, dreamEnd, dreamType);
     }
 }
