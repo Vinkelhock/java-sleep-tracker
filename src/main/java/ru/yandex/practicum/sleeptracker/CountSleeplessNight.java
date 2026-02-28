@@ -8,24 +8,24 @@ import java.util.List;
 import java.util.Optional;
 
 public class CountSleeplessNight implements SleepAnalysisFunction {
-    private final String DESCRIPTION = "Количество бессонных ночей";
+    private final String description = "Количество бессонных ночей";
 
     @Override
     public SleepAnalysisResult analyze(List<SleepingSession> sessions) {
         if (sessions.isEmpty()) {
-            return new SleepAnalysisResult(0, DESCRIPTION);
+            return new SleepAnalysisResult(0, description);
         }
 
         Optional<LocalDateTime> minStartDate = findMinStartDate(sessions);
         Optional<LocalDateTime> maxEndDate = findMaxEndDate(sessions);
         if (minStartDate.isEmpty() || maxEndDate.isEmpty()) {
-            return new SleepAnalysisResult(0, DESCRIPTION);
+            return new SleepAnalysisResult(0, description);
         }
 
         long countAllNights = Duration.between(minStartDate.get(), maxEndDate.get()).toDays() + 1;
 
         if (countAllNights == 0) {
-            return new SleepAnalysisResult(0, DESCRIPTION);
+            return new SleepAnalysisResult(0, description);
         }
 
         long countNights = sessions
@@ -37,9 +37,9 @@ public class CountSleeplessNight implements SleepAnalysisFunction {
 
         int result = Math.toIntExact((int) countAllNights - countNights);
         if (result > 0) {
-            return new SleepAnalysisResult(result, DESCRIPTION);
+            return new SleepAnalysisResult(result, description);
         } else {
-            return new SleepAnalysisResult(0, DESCRIPTION);
+            return new SleepAnalysisResult(0, description);
         }
     }
 
